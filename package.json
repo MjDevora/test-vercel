@@ -20,5 +20,14 @@
       "pre-commit": "turbo run lint"
     }
   },
-  "packageManager": "pnpm@7.5.0"
+  "packageManager": "pnpm@7.5.0",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "clsx": "^1.2.1",
+    "next": "^13.3.4",
+    "react-merge-refs": "^2.0.1"
+  }
 }
