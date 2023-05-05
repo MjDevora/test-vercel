@@ -1,0 +1,35 @@
+.div1 {
+  height: 100px;
+  width: auto;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-image: linear-gradient(
+    90deg,
+    #fc9052 0%,
+    #fd686e 73%,
+    #c73866 100%
+  );
+}
+.circle {
+  border-radius: 50%;
+  height: 85px;
+  width: 100px;
+  background-color: white;
+  margin-top: 1;
+  margin-left: 1%;
+  position: relative;
+  top: 10px;
+  left: 15px;
+}
+.div2 {
+  background-color: lightgray;
+  position: fixed;
+  bottom: 0px;
+  height: 50px;
+  width: 100%;
+}
