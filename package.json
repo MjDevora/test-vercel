@@ -30,6 +30,7 @@
   "devDependencies": {
     "@types/next-auth": "^3.15.0",
     "@wixc3/react-board": "^2.2.0",
+    "encoding": "^0.1.13",
     "prisma": "^4.13.0",
     "supabase": "^1.57.3"
   }
