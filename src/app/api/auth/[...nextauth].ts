@@ -1,7 +1,7 @@
 import NextAuth, { Profile, User, Account} from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { supabase } from '../../utils/supabaseClient';
+import { supabase } from '../../utils/supabase-browser';
 
 const auth = async (req: NextApiRequest, res: NextApiResponse) =>
 NextAuth(req, res, {
