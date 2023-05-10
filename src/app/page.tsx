@@ -20,6 +20,11 @@ export default function Home() {
 
   const userName: String = userSession?.user?.user_metadata?.full_name || 'Not logged in';
 
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    setUserSession(null);
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex flex-col items-center justify-center">
@@ -28,8 +33,14 @@ export default function Home() {
         </h1>
         <button 
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={() => router.push('/login')}>
-            Login
+          onClick={() => {
+            if (userSession) {
+              handleLogout();
+            } else {
+              router.push('/login');
+            }
+          }}>
+            {userSession ? 'Logout' : 'Login'}
         </button>
       </div>
     </main>
