@@ -7,10 +7,11 @@ export interface LoginButtonProps {
     className?: string;
     buttonImage: any;
     buttonText: string;
+    onClickHandler: any;
 }
 
 export const LoginButton: React.FC<LoginButtonProps> = (props: LoginButtonProps) => (
-    <div className={`${props.className} login-button`}>
+    <div className={`${props.className} login-button`} onClick={props.onClickHandler}>
         <span className="login-span">
             <img
                 src={props.buttonImage}

@@ -1,0 +1,44 @@
+.success-modal {
+    width: 380px;
+    height: 298px;
+    border: 7px solid #55A703;
+    border-radius: 25px;
+}
+
+.quit-modal {
+    text-align: end;
+}
+
+.quit-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 22px;
+    margin-right: 22px;
+    cursor: pointer;
+}
+
+.modal-icon {
+    width: 40px;
+    height: 40px;
+    background-color: 55A703;
+    color: #55A703;
+    margin-right: 13px;
+}
+
+.success-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 1px;
+}
+
+.sucess-body {
+    align-self: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 42px;
+}

@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import {LoginButton} from '../components/login/login-button'
 import { useSupabase } from '../supabase-provider';
+import { LoginCard } from '../components/login-card/login-card';
+import { Success } from '../components/success/success';
 
 export default function Login() {
     const {supabase} = useSupabase();
@@ -12,23 +12,17 @@ export default function Login() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
     })
+    
     console.log(data, error)
     }
 
     return (
-        <div>
-            <h1 className="text-6xl font-bold text-center">
-                <a> Iniciar Sesion </a>
-            </h1>
-            <button
-                onClick={() => signInWithGoogle()}
-            >
-                <LoginButton
-                    buttonImage="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                    buttonText="Usar Google"
-                />
-            </button>
-
+        // center the login card at the center of the page
+        <div className="flex min-h-screen flex-col items-center justify-center p-24">
+           <LoginCard loginHandler={signInWithGoogle} /> 
+            <Success 
+                message = "¡Listo! Ya puedes usar tu cuenta de Google para iniciar sesión."
+            />
         </div>
     )
 
