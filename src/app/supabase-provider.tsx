@@ -12,6 +12,7 @@ type SupabaseContext = {
 };
 
 const Context = createContext<SupabaseContext | undefined>(undefined);
+import type { Session } from "@supabase/gotrue-js";
 
 export default function SupabaseProvider({
   children,
@@ -20,6 +21,7 @@ export default function SupabaseProvider({
 }) {
   const [supabase] = useState(() => createBrowserSupabaseClient());
   const router = useRouter();
+  const [session, setSession] = useState<Session|null>(null);
 
   useEffect(() => {
     const {
@@ -30,7 +32,7 @@ export default function SupabaseProvider({
 
     return () => {
       subscription.unsubscribe();
-    };
+    };  
   }, [router, supabase]);
 
   return (
