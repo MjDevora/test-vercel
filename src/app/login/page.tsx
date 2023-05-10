@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import {LoginWithGoogleButton} from '../components/login/login-with-google-button'
+import {LoginButton} from '../components/login/login-button'
 import { useSupabase } from '../supabase-provider';
 
 export default function Login() {
@@ -20,13 +20,13 @@ export default function Login() {
             <h1 className="text-6xl font-bold text-center">
                 <a> Iniciar Sesion </a>
             </h1>
-            {/*  centered button */}
-
             <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 onClick={() => signInWithGoogle()}
             >
-                <LoginWithGoogleButton/>
+                <LoginButton
+                    buttonImage="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                    buttonText="Usar Google"
+                />
             </button>
 
         </div>
