@@ -7,22 +7,12 @@ import type { Session } from '@supabase/gotrue-js';
 
 export default function Home() {
   const router = useRouter();
-  const { supabase } = useSupabase();
-  const [userSession, setUserSession] = useState<Session | null>(null);
+  const { session, signOut } = useSupabase();
 
-  useEffect(() => {
-    async function getCurrentSession() {
-      const { data: {session} } = await supabase.auth.getSession();
-      setUserSession(session);
-    }
-    getCurrentSession();
-  }, [supabase]);
-
-  const userName: String = userSession?.user?.user_metadata?.full_name || 'Not logged in';
+  const userName: String = session?.user?.user_metadata?.full_name || 'Not logged in';
 
   async function handleLogout() {
-    await supabase.auth.signOut();
-    setUserSession(null);
+    await signOut();
   }
 
   return (
@@ -34,13 +24,13 @@ export default function Home() {
         <button 
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={() => {
-            if (userSession) {
+            if (session) {
               handleLogout();
             } else {
               router.push('/login');
             }
           }}>
-            {userSession ? 'Logout' : 'Login'}
+            {session ? 'Logout' : 'Login'}
         </button>
       </div>
     </main>
