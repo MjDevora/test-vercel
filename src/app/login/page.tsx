@@ -6,10 +6,14 @@ import { LoginCard } from '../components/login-card/login-card';
 
 export default function Login() {
     const { supabase } = useSupabase();
+    const origin = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://mikro.vercel.app';
 
     async function signInWithGoogle() {
         await supabase.auth.signInWithOAuth({
           provider: 'google',
+          options: {
+            redirectTo: `${origin}`,
+          },
         });
     }
 
