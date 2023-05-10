@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 20px;
+  background-color: #ffffff;
+  font-family: Inter, Lato, sans-serif;
+}
+
+h1 {
+  font-family: Inter, Lato, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+}
+
+.description {
+  font-family: Inter, Lato, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #898686;
+}
+
+.ViewProfile{
+  min-height: 600vh;
+}
+
+.header-container{
+  min-height: 10px;
+  align-items: left;
+  justify-content: center;
+  margin-left: 300px;
+  margin-top: 30px;
+  padding-left: 50px;
+}
+
+.information-container{
+  float: right;
+  min-height: 600px;
+  align-items: left;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.menu{
+  float: left;
+  width: 270px;
+  height: 1000px;
+  background-color: #F0F0F0;
+}
+
+.header{
+  width: 1519px;
+  height: 130px;
+  background: linear-gradient(90.47deg, #FC9052 0.65%, #FD686E 65.37%, #C73866 100%);
+}
