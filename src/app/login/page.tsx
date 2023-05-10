@@ -5,14 +5,16 @@ import { useSupabase } from '../supabase-provider';
 import { LoginCard } from '../components/login-card/login-card';
 
 export default function Login() {
-    const {supabase} = useSupabase();
+    const { supabase } = useSupabase();
+    const origin = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://mikro-hecarrillo.vercel.app/';
 
     async function signInWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-    })
-    
-    console.log(data, error)
+        await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: `${origin}`,
+          },
+        });
     }
 
     return (
